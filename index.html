@@ -105,7 +105,370 @@
 		<option>Satisfied</option>
 		<option>Very satisfied</option>
 		</select><br><br>
-		<label>What features or sevice would you like to see next at Shoprite Mbabane? (e.g faster checkout, home dilivery, mobile app and more staff </label><br><br>
+		<label>What features or sevice would you like to see next at Shoprite Mbabane? (e.g faster checkout, home dilivery, mobile app and more staff </label<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Shoprite Mbabane | Customer Feedback Survey</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #e9f0f5 0%, #dce5ec 100%);
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+      padding: 2rem 1.5rem;
+      color: #1e2f3e;
+    }
+
+    /* main survey card */
+    .survey-card {
+      max-width: 920px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 40px;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .card-inner {
+      padding: 2rem 2.2rem 2.8rem;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 1rem;
+      }
+      .card-inner {
+        padding: 1.5rem;
+      }
+    }
+
+    /* header decoration */
+    .badge {
+      background: #ffedd5;
+      color: #b45309;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.3rem 1.2rem;
+      border-radius: 50px;
+      letter-spacing: 0.3px;
+      margin-bottom: 1.2rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0a2b3e;
+      margin: 1.2rem 0 0.8rem 0;
+      padding-bottom: 0.5rem;
+      border-left: 5px solid #f4b836;
+      padding-left: 1rem;
+    }
+
+    h4 {
+      font-weight: 500;
+      background: #f8fafc;
+      padding: 0.8rem 1rem;
+      border-radius: 20px;
+      margin: 0.8rem 0 1.2rem 0;
+      color: #2c4c6c;
+      font-size: 0.95rem;
+      border: 1px solid #e2edf2;
+    }
+
+    /* form groups */
+    .form-group {
+      margin-bottom: 1.7rem;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #1e3a4d;
+      font-size: 0.98rem;
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #ffffff;
+      border: 1.5px solid #dce5ec;
+      border-radius: 28px;
+      transition: all 0.2s;
+      outline: none;
+      color: #0f2c3b;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    select:hover, input:hover {
+      border-color: #f4b836;
+      background-color: #fefcf5;
+    }
+
+    select:focus, input:focus {
+      border-color: #f4a61c;
+      box-shadow: 0 0 0 3px rgba(244, 184, 54, 0.2);
+      background-color: #fffef8;
+    }
+
+    /* helper inline instruction */
+    .rating-hint {
+      display: inline-block;
+      background: #eff6ff;
+      padding: 0.25rem 1rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #1f6392;
+      margin-left: 0.5rem;
+    }
+
+    hr {
+      margin: 2rem 0 1.2rem;
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, #ffdd99, #e2e8f0, #ffdd99);
+    }
+
+    /* special spacing for inline block labels */
+    .inline-block-label {
+      display: inline-block;
+    }
+
+    /* optional small note */
+    .footnote {
+      font-size: 0.75rem;
+      color: #5f7f9c;
+      text-align: center;
+      margin-top: 2rem;
+      border-top: 1px solid #e9edf2;
+      padding-top: 1.5rem;
+    }
+
+    button {
+      background: #f4b836;
+      border: none;
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1e2f3e;
+      border-radius: 44px;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      font-family: inherit;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    button:hover {
+      background: #e6a41a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(244, 184, 54, 0.3);
+    }
+
+    button:active {
+      transform: translateY(1px);
+    }
+
+    /* custom styling for selects (consistent) */
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%234b6b85' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1.2rem;
+    }
+
+    /* improve text inputs */
+    input::placeholder {
+      color: #b9cad9;
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+
+    /* section spacing */
+    .section-spacer {
+      margin-top: 1rem;
+    }
+
+    /* responsive tweaks */
+    @media (max-width: 550px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+      .badge {
+        font-size: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="survey-card">
+  <div class="card-inner">
+    <div class="badge">📋 Share your real experience</div>
+    <p style="font-size: 1.05rem; color: #2c5368; margin-bottom: 0.5rem;">✨ Your voice shapes better service ✨</p>
+
+    <!-- Section A: Demographics -->
+    <h1>📌 Section A: About you <span style="font-size: 0.9rem; font-weight: normal;">(Demographics)</span></h1>
+
+    <div class="form-group">
+      <label>⚧ What is your gender?</label>
+      <select>
+        <option>male</option>
+        <option>female</option>
+        <option>Prefer not to say</option>
+        <option>Non-binary</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>🎂 What is your age group?</label>
+      <select>
+        <option>18-25</option>
+        <option>26-35</option>
+        <option>36-45</option>
+        <option>46 and above</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>🛒 How often do you shop at Shoprite Mbabane?</label>
+      <select>
+        <option>Daily</option>
+        <option>Weekly</option>
+        <option>Monthly</option>
+        <option>Less than once a month</option>
+      </select>
+    </div>
+
+    <!-- Section B: Customer Service Experience -->
+    <h1>⭐ Section B: Customer Service Experience <span style="font-size:0.8rem;">(Core Factors)</span></h1>
+    <h4>📌 Instruction: Rate your agreement with each statement.<br> 
+    <span style="font-weight:600;">1=Strongly Disagree &nbsp; 2=Disagree &nbsp; 3=Neutral &nbsp; 4=Agree &nbsp; 5=Strongly Agree</span></h4>
+
+    <div class="form-group">
+      <label>😊 Employees are friendly and polite.</label>
+      <select>
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>⚡ Service speed (checkout and assistance) is quick.</label>
+      <select>
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>🛠️ Shoprite handles customer complaints efficiently.</label>
+      <select>
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>⏳ Queues move at a reasonable pace.</label>
+      <select>
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+      </select>
+    </div>
+
+    <!-- Section C: Needs, Value, and Responsiveness -->
+    <h1>🎯 Section C: Needs, Value & Responsiveness <span style="font-size:0.8rem;">(New Guidelines)</span></h1>
+
+    <div class="form-group">
+      <label>🛍️ How well does Shoprite's service meet your shopping needs?</label>
+      <select>
+        <option>Very poorly</option>
+        <option>Poorly</option>
+        <option>Adequately</option>
+        <option>Well</option>
+        <option>Very well</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>💬 How responsive has Shoprite been to your questions or concerns? <br><span style="font-size:0.8rem; font-weight:normal;">(e.g., asking for help, reporting an issue)</span></label>
+      <select>
+        <option>Not responsive at all</option>
+        <option>Slightly responsive</option>
+        <option>Moderately responsive</option>
+        <option>Very responsive</option>
+        <option>Extremely responsive</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>💰 How would you rate the value for money at Shoprite Mbabane? <br><span style="font-size:0.8rem; font-weight:normal;">(What you get for what you pay)</span></label>
+      <select>
+        <option>Very poor value</option>
+        <option>Poor value</option>
+        <option>Fair value</option>
+        <option>Good value</option>
+        <option>Excellent value</option>
+      </select>
+    </div>
+
+    <!-- Section D: Overall Satisfaction & Future Insights -->
+    <h1>🌟 Section D: Overall Satisfaction & Future Insights</h1>
+
+    <div class="form-group">
+      <label>😍 Overall, how satisfied are you with customer service at Shoprite Mbabane?</label>
+      <select>
+        <option>Very dissatisfied</option>
+        <option>Dissatisfied</option>
+        <option>Neutral</option>
+        <option>Satisfied</option>
+        <option>Very satisfied</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>🚀 What features or service would you like to see next at Shoprite Mbabane? <br><span style="font-size:0.8rem; font-weight:normal;">(e.g faster checkout, home delivery, mobile app, more staff)</span></label>
+      <input type="text" placeholder="Share your ideas here ..." name="feature_suggestion">
+    </div>
+
+    <div class="form-group">
+      <label>📝 Would you like to add any other comments or suggestions to help us improve your experience?</label>
+      <input type="text" placeholder="Your feedback means the world to us ..." name="additional_comments">
+    </div>
+
+    <!-- submit simulation / nice button -->
+    <button id="submitSurveyBtn">📬 Submit your feedback</button>
+    <div class="footnote">
+      🔒 Anonymous survey • Powered by customer insights | Shoprite Mbabane cares about your experience
+    </div>
+  </div>
+</div>
+
+<!-- optional tiny JS to show alert on submit (non-intrusive, adds interaction) -->
+<script>
+  (function() {
+    const submitBtn = document.getElementById('submitSurveyBtn');
+    if(submitBtn) {
+      submitBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        // simple feedback simulation
+        alert('✅ Thank you for your valuable feedback! \nYour input helps Shoprite Mbabane serve you better.');
+      });
+    }
+  })();
+</script>
+</body>
+</html>><br><br>
 		<input type="text" placeholder="Type here" name=""><br><br>
 		<label>Would you like to add any other comments or suggestion to help us improve your experience? </label><br><br>
 		<input type="text" placeholder="Type here" name="">
